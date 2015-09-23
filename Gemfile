@@ -17,11 +17,13 @@ gem 'devise', '>= 3.2.4'
 
 gem 'carrierwave'
 
+gem 'carrierwave-aws'
+
+gem 'mini_magick'
+
 gem "figaro"
 
 gem "fog", "~> 1.3.1"
-
-gem 'mini_magick'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
