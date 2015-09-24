@@ -11,8 +11,12 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
 //= require jquery_ujs
-
 //= require_tree .
+
+// Load all Bootstrap javascripts
+//= require bootstrap-sprockets
+//= require bootstrap
+
+//= require jquery-ui
 
