@@ -5,8 +5,16 @@ class Lesson < ActiveRecord::Base
 	include RankedModel
 	ranks :row_order, :with_same => :section_id
 
-
 	# validates :video, :presence    => {:message => 'Please add a video'}
 	# validates :title, :presence    => {:message => 'Please add a title' }
 	# validates :subtitle, :presence => {:message => 'Pleae add a subtitle'}
+
+	def next_lesson
+		lesson = section.lessons.where("row_order > ?", self.row_order).rank(:row_order).first
+		if lesson.blank? && section.next_section
+			return section.next_section.lessons.rank(:row_order).first
+		end
+
+		return lesson
+	end
 end
